@@ -1,0 +1,12 @@
+{
+    "name": "yana/site",
+    "description": "A PHP Application for tracking excpenses.",
+    "type": "project",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "src/Framework",
+            "App\\" : "src/App"
+        }
+    }
+}
