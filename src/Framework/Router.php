@@ -3,6 +3,7 @@
 declare(strict_types= 1);
 
 namespace Framework;
+//use App\Controllers;
 
 class Router {
 
@@ -30,6 +31,25 @@ public function dispath(string $path, string $method){
     $path = $this->normalizePath($path);
     $method = strtoupper($method);
 
-    echo "". $path ."". $method ."";
+    //echo "". $path ."". $method ."";
+
+    foreach ($this->routes as $route){
+       
+       if (!preg_match("#^{$route['path']}$#", $path) || 
+       $route['method']!== $method){
+            continue;
+       }
+       
+       [$class, $function] = $route['controller'];
+       
+       $controllerInstance = new $class;
+       //var_dump($controllerInstance);
+
+       $controllerInstance->{$function}();
+
+       //echo 'route found';
+       
+
+    }
 }
 }
