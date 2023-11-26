@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types= 1);
+declare(strict_types=1);
 
 namespace App\Controllers;
 
-class HomeController {
-    public function home(){
+class HomeController
+{
+    public function home()
+    {
         echo "home page";
     }
-
 }
-
